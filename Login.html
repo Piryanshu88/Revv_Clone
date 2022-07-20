@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <style>
+    form{display:grid;
+            justify-content: center;
+            gap:20px
+        }
+        #box{
+            width:30%;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            margin: auto;
+            display: grid;
+            justify-content: center;
+            margin-top: 50px;
+            padding: 20px 10px;
+            border-radius: 5px;
+        }
+        #box>h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #box>p{
+            text-align: center;
+            margin-top: 23px;
+        }
+       form>input{
+            font-size: 25px;
+            margin: auto;
+            
+
+        }
+        form>p{
+            font-size: 20px;
+        }
+        #pass+p{
+            text-align: center;
+            margin: auto;
+        }
+        
+        form>input:last-child{
+            font-size: 20px;
+            margin:0px 30px 30px 30px ;
+        }
+        #Sign{
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>Sign In</h2>
+        <form>
+            <label>Email</label>
+            <input type="text" id="ema" placeholder="Enter email">
+            <label>Password</label>
+            <input type="password" id="pass" placeholder="Enter password"><br>
+            <input type="submit" value="SIGN IN">
+        </form>
+        <p>Don't have an account?<span id="Sign">Sign up</span></p>
+    </div>    
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",loginfn)
+    let signupdata=JSON.parse(localStorage.getItem("signup"))||[]
+    let loginData=JSON.parse(localStorage.getItem("login"))||[]
+    function loginfn(event){
+        event.preventDefault()
+        if(signupdata==""){
+            alert("no user found");
+            return;
+        }
+       let obj={
+            email:document.querySelector("#ema").value,
+            password:document.querySelector("#pass").value
+        }
+        let count=0;
+        signupdata.forEach(function(ele){
+            if(obj.email==ele.Email&&obj.password==ele.Pass){
+                localStorage.setItem("login",JSON.stringify(obj))
+                count++;
+            }
+        })
+        console.log(count)
+        if(count<=0){
+                alert("please, fill the correct information")
+            }else{
+                alert("login successfully")
+                window.location.href="index.html"
+            }
+    }
+        
+
+     document.querySelector("#Sign").addEventListener("click",function(){
+        window.location.href="Signp.html"
+    })
+</script>
