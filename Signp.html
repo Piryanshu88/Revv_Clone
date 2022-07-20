@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        form{
+            display:grid;
+            justify-content: center;
+        }
+        #box{
+            width:30%;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            margin: auto;
+            display: grid;
+            justify-content: center;
+            margin-top: 50px;
+            padding: 20px 10px;
+            border-radius: 5px;
+        }
+        #box>h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #box>p{
+            text-align: center;
+            margin-top: 23px;
+        }
+       form>input{
+            font-size: 25px;
+            margin: auto;
+            
+
+        }
+        form>p{
+            font-size: 20px;
+        }
+        #pass+p{
+            text-align: center;
+            margin: auto;
+        }
+        
+        form>input:last-child{
+            font-size: 20px;
+            margin:30px ;
+        }
+        #login{
+            color: blue;
+            cursor: pointer;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>Sign Up</h2>
+        <form id="form">
+            <p>Full Name</p>
+            <input id="name" type="text" placeholder="Enter your full name">
+            <p>Email</p>
+            <input id="email" type="text" placeholder="Enter email">
+            <p>Password</p>
+            <input id="pass" type="password" placeholder="Enter password">
+            <input type="submit" value="SIGN UP">
+        </form>
+        <p>Already have an account?<span id="login">Sign In</span></p>
+    </div>
+</body>
+</html>
+<script>
+  document.querySelector("#form").addEventListener("submit",ToDoList)
+  let arr=JSON.parse(localStorage.getItem("signup"))||[]
+  function ToDoList(event){
+        event.preventDefault()
+       Obj={
+            Name:document.querySelector("#name").value,
+            Email:document.querySelector("#email").value,
+            Pass:document.querySelector("#pass").value
+        }
+       
+      if(Obj.Name==""||Obj.Email==""||Obj.Pass==""){
+        alert("fill the details")
+      }else{
+        arr.push(Obj);
+        localStorage.setItem("signup",JSON.stringify(arr))
+        alert("sign up successfully")
+        window.location.href="login.html"
+      }
+    } 
+    document.querySelector("#login").addEventListener("click",function(){
+        window.location.href="login.html"
+    })
+    </script>
