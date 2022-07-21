@@ -10,12 +10,12 @@
 <body>
     <div id="nav">
         <div><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt=""></div>
-        <div><b>Hyundai</b> Subscription</div>
-        <div><b>Mahindra</b> Subscription</div>
+        <div id="hy"><b>Hyundai</b> Subscription</div>
+        <div id="mh"><b>Mahindra</b> Subscription</div>
         <p>FAQs</p>
         <img src="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg" alt="">
-        <button>Login</button>
-        <button>Signup</button>
+        <button><a href="./Login.html">Login</a></button>
+        <button><a href="./Signp.html">Signup</a></button>
     </div>
     <!-- <div id="top">
         <img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/heroCarousel/ST_Desktop_1_FG.webp" alt="">
@@ -247,3 +247,11 @@
     </div>
 </body>
 </html>
+<script>
+    document.querySelector("#hy").addEventListener("click",function(){
+        window.location.href="hsub.html"
+    })
+    document.querySelector("#mh").addEventListener("click",function(){
+        window.location.href="msub.html"
+    })
+</script>
