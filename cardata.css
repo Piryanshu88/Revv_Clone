@@ -3,10 +3,26 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 #nav{
-    border:1px solid red;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+#hed{
+    text-align: center;
+    margin-top: 20px;
+}
+#sp{
+    color:slategray
+}
+#hy,#mh,#Faq,button{
+    padding: 3px 4px;
+}
+#hy:hover,#mh:hover,#Faq:hover,button:hover{
+ background-color: aliceblue;
+ cursor: pointer;
+ border: 1px solid ;
+ border-radius: 10px;
 }
 #box{
     width: 80%;
@@ -44,6 +60,10 @@
     margin-bottom: 20px;
     margin-top: 20px;
     cursor: pointer;
+}
+#box button:hover{
+    background-color: rgb(50, 50, 193);
+    border: 1px wheat;
 }
 #low{
     background-color: rgb(45, 45, 45);

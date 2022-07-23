@@ -9,12 +9,12 @@
 </head>
 <body>
     <div id="nav">
-        <div><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt=""></div>
+        <div><a href="./index.html"><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt=""></a></div>
         <div id="hy"><b>Hyundai</b> Subscription</div>
         <div id="mh"><b>Mahindra</b> Subscription</div>
         <p id="Faq">FAQs</p>
         <img src="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg" alt="">
-        <button><a href="./Login.html">Login</a></button>
+        <button id="login"<a href="./Login.html">Login</a></button>
         <button><a href="./Signp.html">Signp</a></button>
     </div>
     <section>
@@ -309,7 +309,7 @@
         </svg>
     </div>
     <div class="answer">
-        <p>What documents do I need to take the delivery of my Revv car?</p>
+        <p>While taking the delivery of your car, you will need to show your ORIGINAL Driving License and ID proof (same as the ones whose details you provided while making the booking). These documents will be verified for validity. In case these documents are unavailable/invalid/unverifiable, your booking will be subject to cancellation. Revv’s decision in this matter will be final and binding. Please note that driving license printed on A4 sheet of paper (original or otherwise) will not be considered as a valid document.</p>
     </div>
 </div>
     </section>
@@ -331,4 +331,15 @@
     document.querySelector("#mh").addEventListener("click",function(){
         window.location.href="msub.html"
     })
+    document.querySelector("#Faq").addEventListener("click",function(){
+        window.location.href="FAQ.html"
+    })
+    let loginData=JSON.parse(localStorage.getItem("login"))||[]
+    if(loginData!=""){
+        document.querySelector("#login").innerText=loginData.Name
+        console.log(loginData.Name)
+    }else{
+        document.querySelector("#login").innerText="login"
+        console.log("login")
+    }
 </script>

@@ -9,23 +9,26 @@
 </head>
 <body>
     <div id="nav">
-        <div><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt=""></div>
+        <div><a href="./index.html"><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt=""></a></div>
         <div id="hy"><b>Hyundai</b> Subscription</div>
         <div id="mh"><b>Mahindra</b> Subscription</div>
         <p id="Faq">FAQs</p>
         <img src="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg" alt="">
-        <button><a href="./Login.html">Login</a></button>
-        <button><a href="./Signp.html">Signup</a></button>
+        <a href="./Login.html"><button id="login">Login</button></a>
+        <a href="./Signp.html"><button>Signup</button></a>
     </div>
+    <h2 id="hed">Car rental in <span id="sp"></span></h2>
     <div id="box">
-        <div><img src="https://www.revv.co.in/imgs/plp_banner_web.png" alt=""></div>
+        <div>
+            <img src="https://www.revv.co.in/imgs/plp_banner_web.png" alt="">
+        </div>
         <div>
             <img src="https://fastly-production.24c.in/hello-ar/dev/uploads/7522d6d4-63f5-4d96-a11c-00dff0e2f56d/3780a9d6-a41d-4038-a290-b042475ed36d/slot/camera-SRP.jpg?w=794&auto=format" alt="">
             <h2>Hyundai i10</h2>
             <p>₹ 5068</p>
             <div>
                 <p>Extra km charge @ ₹ 13/km</p>
-                <button>Book</button>
+                <button>book</button>
             </div>
         </div>
 
@@ -45,7 +48,7 @@
             <p>₹ 20908</p>
             <div>
                 <p>Extra km charge @ ₹ 15/km</p>
-                <button>Book</button>
+                <button class="btn">Book</button>
             </div>
         </div>
 
@@ -55,7 +58,7 @@
             <p>₹ 7068</p>
             <div>
                 <p>Extra km charge @ ₹ 13/km</p>
-                <button>Book</button>
+                <button class="btn">Book</button>
             </div>
         </div>
 
@@ -265,7 +268,7 @@
             <p>₹ 15068</p>
             <div>
                 <p>Extra km charge @ ₹ 13/km</p>
-                <button>Book</button>
+                <button >Book</button>
             </div>
         </div>
     </div>
@@ -328,6 +331,13 @@
 </body>
 </html>
 <script>
+    let btn=document.querySelectorAll("#box button")
+    btn.forEach(function(ele){
+        ele.addEventListener("click",function(){
+            alert("Redirecting to Payment")
+            window.location.href="payment.html"
+        })
+    })
     document.querySelector("#hy").addEventListener("click",function(){
         window.location.href="hsub.html"
     })
@@ -343,5 +353,15 @@
     document.querySelector('#home').addEventListener("click",function(){
         window.location.href="./index.html"
     })
+    let loginData=JSON.parse(localStorage.getItem("login"))||[]
+    if(loginData!=""){
+        document.querySelector("#login").innerText=loginData.Name
+        console.log(loginData.Name)
+    }else{
+        document.querySelector("#login").innerText="login"
+        console.log("login")
+    }
+    let cardata=JSON.parse(localStorage.getItem("cardata"))
+    document.querySelector("#sp").innerText=cardata.city
     
 </script>

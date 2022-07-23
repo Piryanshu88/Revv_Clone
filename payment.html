@@ -9,12 +9,12 @@
 </head>
 <body>
     <div id="nav">
-        <div><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt=""></div>
+        <div><a href="./index.html"><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt=""></a></div>
         <div id="hy"><b>Hyundai</b> Subscription</div>
         <div id="mh"><b>Mahindra</b> Subscription</div>
         <p id="Faq">FAQs</p>
         <img src="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg" alt="">
-        <button><a href="./Login.html">Login</a></button>
+        <button id="login"><a href="./Login.html">Login</a></button>
         <button><a href="./Signp.html">Signup</a></button>
     </div>
 
@@ -119,4 +119,12 @@
              alert("Thanks and have a great journey")
         }
     })
+    let loginData=JSON.parse(localStorage.getItem("login"))||[]
+    if(loginData!=""){
+        document.querySelector("#login").innerText=loginData.Name
+        console.log(loginData.Name)
+    }else{
+        document.querySelector("#login").innerText="login"
+        console.log("login")
+    }
 </script>

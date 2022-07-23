@@ -10,16 +10,16 @@
 <body>
     <div id="nav">
         <div>
-            <div><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt=""></div>
+            <div><a href="./index.html"><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt=""></a></div>
         <div><img src="https://www.revv.co.in/grapheneImages/hyundai/mahindra-logo-sub@2x.png" alt=""></div>
         </div>
         <div>
-            <p>FAQs</p>
+            <p id="fas">FAQs</p>
             <p>How  its works</p>
             <div>
                 <img src="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg" alt="">
-                <button><a href="./Login.html">Login</a></button>
-                <button><a href="./Signp.html">Signup</a></button>
+                <a href="./Login.html"><button id="login">Login</button></a>
+                <a href="./Signp.html"><button>Signup</button></a>
             </div>
         </div>
     </div>
@@ -31,26 +31,26 @@
             <form action="">
                 <select id="city">
                     <option value="">City</option>
-                    <option value="">Delhi-NCR</option>
-                    <option value="">Mumbai</option>
-                    <option value="">Ahemdabad</option>
-                    <option value="">Meerut</option>
-                    <option value="">Pune</option>
-                    <option value="">Goa</option>
-                    <option value="">Hyderabad</option>
-                    <option value="">banglore</option>
-                    <option value="">Chennai</option>
-                    <option value="">Kolakata</option>
-                    <option value="">Jaipur</option>
-                    <option value="">Bhuwenashwer</option>
-                    <option value="">Kochi</option>
-                    <option value="">Manglore</option>
-                    <option value="">Maysur</option>
-                    <option value="">Vijaywada</option>
+                    <option value="Delhi-NCR">Delhi-NCR</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Ahemdabad">Ahemdabad</option>
+                    <option value="Meerut">Meerut</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Bangalore">banglore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Kolakata">Kolakata</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Bhubaneswar">Bhuwenashwer</option>
+                    <option value="Kochi">Kochi</option>
+                    <option value="Manglore">Manglore</option>
+                    <option value="Maysur">Maysur</option>
+                    <option value="Vijayawada">Vijaywada</option>
                 </select><br>
                 <img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/calenderIcon.png" alt="">
-                <input type="date" placeholder="Enter Start date"><br>
-                <button>Search ></button>
+                <input type="date" id="date" placeholder="Enter Start date"><br>
+                <input  id="btn" type="button" value="Search >">
             </form>
             
         </div>
@@ -222,3 +222,30 @@
     </div>
 </body>
 </html>
+<script>
+      document.querySelector("#btn").addEventListener("click",function(){
+        if(document.querySelector("#city").value!=""||document.querySelector("#date").value!=""){
+            let obj={
+            city:document.querySelector("#city").value,
+            date:document.querySelector("#date").value
+        }
+        localStorage.setItem("cardata",JSON.stringify(obj))
+            console.log("hello")
+           window.location.href="cardata.html" 
+        }else{
+            alert("Please, fill the details")
+        }
+        
+    })
+    document.querySelector("#fas").addEventListener("click",function(){
+        window.location.href="FAQ.html"
+    })
+    let loginData=JSON.parse(localStorage.getItem("login"))||[]
+    if(loginData!=""){
+        document.querySelector("#login").innerText=loginData.Name
+        console.log(loginData.Name)
+    }else{
+        document.querySelector("#login").innerText="login"
+        console.log("login")
+    }
+</script>

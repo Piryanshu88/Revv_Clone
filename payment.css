@@ -14,6 +14,15 @@
   text-transform: capitalize;
   transition: all .2s linear;
 }
+#hy,#mh,#Faq,button{
+  padding: 3px 4px;
+}
+#hy:hover,#mh:hover,#Faq:hover,button:hover{
+background-color: aliceblue;
+cursor: pointer;
+border: 1px solid ;
+border-radius: 10px;
+}
 
 .container{
   display: flex;
@@ -21,7 +30,6 @@
   align-items: center;
   padding:25px;
   min-height: 100vh;
-  /* background: linear-gradient(90deg, #2ecc71 60%, #27ae60 40.1%); */
 }
 
 .container form{

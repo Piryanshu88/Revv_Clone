@@ -9,33 +9,16 @@
 </head>
 <body>
     <div id="nav">
-        <div><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt=""></div>
+        <div><a href="./index.html"><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt=""></a></div>
         <div id="hy"><b>Hyundai</b> Subscription</div>
         <div id="mh"><b>Mahindra</b> Subscription</div>
-        <p>FAQs</p>
+        <p class="fas">FAQs</p>
         <img src="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg" alt="">
-        <button><a href="./Login.html">Login</a></button>
-        <button><a href="./Signp.html">Signup</a></button>
+        <a href="./Login.html"><button id="login">Login</button></a>
+        <a href="./Signp.html"><button>Signup</button></a>
     </div>
-    <!-- <div id="top">
-        <img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/heroCarousel/ST_Desktop_1_FG.webp" alt="">
-    </div> -->
     <div id="pt">
-        <div id="box">
-            <div id="b0">
-                <div id="b1">
-                    <p>Rentals</p>
-                     <p>For hours & days</p>
-                </div>
-                <div id="b2">
-                    <b>Subscription</b>
-                    <p>For months & years</p>
-                </div>
-            </div>
-            </div>
-          
-        <!-- <img src="https://www.revv.co.in/imgs/logo-rentals.svg" alt=""> -->
-        <!-- <h4>Car Rental in Chennai</h4> -->
+
     </div>
     <div id="middle">
         <h3>Features</h3>
@@ -189,8 +172,8 @@
             <p>© 2022 Primemover Mobility Technologies Pvt Ltd. All rights reserved</p>
         </div>
         <div>
-            <p>Home</p>
-            <p>FAQ</p>
+            <p id="home">Home</p>
+            <p class="fas">FAQ</p>
             <p>Blog</p>
             <p>Policy</p>
         </div>
@@ -250,8 +233,23 @@
 <script>
     document.querySelector("#hy").addEventListener("click",function(){
         window.location.href="hsub.html"
+
     })
     document.querySelector("#mh").addEventListener("click",function(){
         window.location.href="msub.html"
     })
+    document.querySelector(".fas").addEventListener("click",function(){
+        window.location.href="FAQ.html"
+    })
+    document.querySelector("#home").addEventListener("click",function(){
+        window.location.href="index.html"
+    })
+    let loginData=JSON.parse(localStorage.getItem("login"))||[]
+    if(loginData!=""){
+        document.querySelector("#login").innerText=loginData.Name
+        console.log(loginData.Name)
+    }else{
+        document.querySelector("#login").innerText="login"
+        console.log("login")
+    }
 </script>

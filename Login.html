@@ -83,6 +83,7 @@
         let count=0;
         signupdata.forEach(function(ele){
             if(obj.email==ele.Email&&obj.password==ele.Pass){
+                obj["Name"]=ele.Name
                 localStorage.setItem("login",JSON.stringify(obj))
                 count++;
             }
