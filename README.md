@@ -20,27 +20,27 @@ Revv is a self drive car rental service that provides you with all the privacy, 
 
 Landing page and navigation bar
 
-![LandingPage](/Revv_Clone/readmeImg/Home.png)
+![LandingPage](/readmeImg/Home.png)
 
 ---
 
 Rev Car page
 
-![LandingPage](/Revv_Clone/readmeImg/car.png)
+![LandingPage](/readmeImg/car.png)
 
 ---
 
 Car Subscription page
 
-![LandingPage](/Revv_Clone/readmeImg/Sub.png)
+![LandingPage](/readmeImg/Sub.png)
 
 ---
 
 Signup and sign-in pages
 
-![LandingPage](/Revv_Clone/readmeImg/Signin.png)
+![LandingPage](/readmeImg/Signin.png)
 
-![LandingPage](/Revv_Clone/readmeImg/Signup.png)
+![LandingPage](/readmeImg/Signup.png)
 
 ---
 
