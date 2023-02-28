@@ -46,7 +46,7 @@ Signup and sign-in pages
 
 Payment Page
 
-![LandingPage](/Revv_Clone/readmeImg/pay.png)
+![LandingPage](/readmeImg/pay.png)
 
 ---
 
